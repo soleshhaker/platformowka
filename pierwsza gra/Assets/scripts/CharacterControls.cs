@@ -2,12 +2,12 @@
 using System.Collections;
 
 [RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(CapsuleCollider))]
+
 
 public class CharacterControls : MonoBehaviour
 {
 
-	public float speed = 10.0f;
+	public static float speed = 10.0f;
 	public float gravity = 10.0f;
 	public float maxVelocityChange = 10.0f;
 	public bool canJump = true;

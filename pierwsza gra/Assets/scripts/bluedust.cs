@@ -5,9 +5,8 @@ using UnityEngine.UI;
 
 public class bluedust : MonoBehaviour
 {
-    GameObject dust;
-    GameObject dustslot;
-    static public int dustobtained = 0;
+    public static GameObject dust;
+    public static GameObject dustslot;
     void Start()
     {
         dust = GameObject.Find("Image");
@@ -21,7 +20,7 @@ public class bluedust : MonoBehaviour
         {
             dust.GetComponent<Image>().enabled = true;
             dustslot.GetComponent<Image>().enabled = true;
-            dustobtained += 1;
+            inventory.dustobtained += 1;
 
             Destroy(gameObject);
         }

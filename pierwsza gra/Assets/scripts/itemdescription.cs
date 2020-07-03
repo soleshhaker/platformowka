@@ -42,8 +42,8 @@ public class itemdescription : MonoBehaviour
 
     public void OnPointerExit(PointerEventData eventData)
     {
-      //  objToSpawn.GetComponent<Text>().text = null;
-       // istext = 0;
-       // Destroy(objToSpawn);
+       objToSpawn.GetComponent<Text>().text = null;
+       istext = 0;
+       Destroy(objToSpawn);
     }
 }
