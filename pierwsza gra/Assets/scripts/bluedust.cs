@@ -7,6 +7,7 @@ public class bluedust : MonoBehaviour
 {
     GameObject dust;
     GameObject dustslot;
+    static public int dustobtained = 0;
     void Start()
     {
         dust = GameObject.Find("Image");
@@ -20,6 +21,9 @@ public class bluedust : MonoBehaviour
         {
             dust.GetComponent<Image>().enabled = true;
             dustslot.GetComponent<Image>().enabled = true;
+            dustobtained += 1;
+
+            Destroy(gameObject);
         }
     }
 }
