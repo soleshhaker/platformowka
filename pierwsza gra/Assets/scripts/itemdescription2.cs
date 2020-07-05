@@ -35,7 +35,7 @@ public class itemdescription2 : MonoBehaviour
             objToSpawn.transform.position = new Vector3(300, 0, 3);
             objToSpawn.GetComponent<RectTransform>().localPosition = new Vector3(10, -170, 1);
             objToSpawn.GetComponent<RectTransform>().sizeDelta = new Vector2(400, 60);
-            objToSpawn.GetComponent<Text>().text = "Potion than enhances speed";
+            objToSpawn.GetComponent<Text>().text = "Potion than enhances speed (Click to use)";
             objToSpawn.GetComponent<Text>().font = Resources.GetBuiltinResource(typeof(Font), "Arial.ttf") as Font;
             istext = 1;
 
