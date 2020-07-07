@@ -22,6 +22,7 @@ public class bluedust : MonoBehaviour
             dustslot.GetComponent<Image>().enabled = true;
             inventory.dustobtained += 1;
 
+
             Destroy(gameObject);
         }
     }

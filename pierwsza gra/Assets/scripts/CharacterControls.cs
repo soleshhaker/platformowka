@@ -7,7 +7,7 @@ using System.Collections;
 public class CharacterControls : MonoBehaviour
 {
 
-	public static float speed = 10.0f;
+	public static float speed = 20.0f;
 	public float gravity = 10.0f;
 	public float maxVelocityChange = 10.0f;
 	public bool canJump = true;
@@ -37,7 +37,7 @@ public class CharacterControls : MonoBehaviour
 			velocityChange.x = Mathf.Clamp(velocityChange.x, -maxVelocityChange, maxVelocityChange);
 			velocityChange.z = Mathf.Clamp(velocityChange.z, -maxVelocityChange, maxVelocityChange);
 			velocityChange.y = 0;
-			GetComponent<Rigidbody>().AddForce(velocityChange, ForceMode.VelocityChange);
+			GetComponent<Rigidbody>().AddForce(velocityChange, ForceMode.Acceleration);
 
 			// Jump
 			if (canJump && grounded && Input.GetButton("Jump"))
