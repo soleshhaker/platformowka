@@ -16,7 +16,7 @@ public class bluedust : MonoBehaviour
     void OnTriggerEnter(Collider col)
     {
 
-        if (col.gameObject.name == "Sphere")
+        if (col.gameObject.tag == "Player")
         {
             dust.GetComponent<Image>().enabled = true;
             dustslot.GetComponent<Image>().enabled = true;

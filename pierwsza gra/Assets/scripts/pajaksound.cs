@@ -11,7 +11,7 @@ public class pajaksound : MonoBehaviour
     void OnTriggerEnter(Collider coll)
     {
       
-        if (coll.gameObject.name == "Sphere")
+        if (coll.gameObject.tag == "Player")
         {
             source = GetComponent<AudioSource>();
             source.Play();

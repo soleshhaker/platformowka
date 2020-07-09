@@ -24,7 +24,7 @@ public class speedpotion : MonoBehaviour
     void OnTriggerEnter(Collider col)
     {
 
-        if (col.gameObject.name == "Sphere")
+        if (col.gameObject.tag == "Player")
         {
             spdpotion.GetComponent<Image>().enabled = true;
             speedpotionslot.GetComponent<Image>().enabled = true;

@@ -12,13 +12,13 @@ public class KillEnemy : MonoBehaviour
     void OnCollisionEnter(Collision col)
     {
         float speed = 300.0f;
-        if (col.gameObject.name == "Sphere")
+        if (col.gameObject.tag == "Player")
         {
             punkty.scoreValue += 30;
             source = GetComponent<AudioSource>();
             source.Play();
 
-            GameObject.Find("Sphere").GetComponent<Rigidbody>().AddForce(Vector3.up * speed);
+            GameObject.Find("player").GetComponent<Rigidbody>().AddForce(Vector3.up * speed);
 
             Destroy(transform.parent.parent.gameObject, 0.1f);
             

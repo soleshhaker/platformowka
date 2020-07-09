@@ -12,7 +12,7 @@ public class runda2start : MonoBehaviour
     {
 
 
-        if (col.gameObject.name == "Sphere")
+        if (col.gameObject.tag == "Player")
         {
 
             Invoke("tekst", 2f);

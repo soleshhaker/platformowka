@@ -15,7 +15,7 @@ public class camerascript2 : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.Find("Sphere");
+        player = GameObject.Find("player");
         vcam1 = GameObject.Find("vcam1");
         vcam2 = GameObject.Find("vcam2");
     }
@@ -23,7 +23,7 @@ public class camerascript2 : MonoBehaviour
     void OnTriggerEnter(Collider col)
     {
 
-        if (col.gameObject.name == "Sphere")
+        if (col.gameObject.tag == "Player")
         {
 
             vcam1.SetActive(true);

@@ -14,7 +14,7 @@ public class changescene1 : MonoBehaviour
     void OnCollisionEnter(Collision col)
     {
 
-        if (col.gameObject.name == "Sphere")
+        if (col.gameObject.tag == "Player")
         {
             punkty.scoreValue = 0;
             source = GetComponent<AudioSource>();

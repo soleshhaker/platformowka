@@ -14,7 +14,7 @@ public class upgrade1 : MonoBehaviour
     {
         obj = GameObject.Find("upgradetext");
 
-        if (col.gameObject.name == "Sphere" && Input.GetKeyDown(KeyCode.Return) && punkty.scoreValue >= 300)
+        if (col.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.Return) && punkty.scoreValue >= 300)
         {
             Debug.Log("skrypt");
             punkty.scoreValue -= 300;

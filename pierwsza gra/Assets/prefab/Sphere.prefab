@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 2188790778820719887}
   - component: {fileID: 2188790778820719883}
   - component: {fileID: 2119417565}
-  - component: {fileID: 2119417561}
   - component: {fileID: 2119417563}
+  - component: {fileID: 6994735102881502712}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Player
@@ -209,7 +209,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2119417561
+--- !u!114 &2119417563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2188790778820719886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6824408868ca6b443a374e768d4a3029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6994735102881502712
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -224,15 +236,3 @@ MonoBehaviour:
   gravity: 10
   maxVelocityChange: 10
   canJump: 1
---- !u!114 &2119417563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2188790778820719886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6824408868ca6b443a374e768d4a3029, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

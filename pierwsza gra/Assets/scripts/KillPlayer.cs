@@ -12,8 +12,8 @@ public class KillPlayer : MonoBehaviour
 
     void OnCollisionEnter (Collision col)
     {
-        Player = GameObject.Find("Sphere");
-        if (col.gameObject.name == "Sphere")
+        Player = GameObject.Find("player");
+        if (col.gameObject.tag == "Player")
         {
             Destroy(Player);
             punkty.scoreValue--;
