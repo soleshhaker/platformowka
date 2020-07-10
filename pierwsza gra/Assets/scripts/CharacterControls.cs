@@ -15,10 +15,9 @@ public class CharacterControls : MonoBehaviour
 	Animator animator;
 	public static float jumpHeight = 2.0f;
 	private bool grounded = false;
-	private bool looksright = false;
-	private bool looksleft = false;
-
-
+	public float horizontal;
+	public float vertical;
+	Vector3 targetVelocity;
 	void Awake()
 	{
 		GetComponent<Rigidbody>().freezeRotation = true;
@@ -27,48 +26,44 @@ public class CharacterControls : MonoBehaviour
 	}
 	void Update()
     {
-		Debug.Log(looksleft);
-		if(transform.eulerAngles.y == 90)
-        {
-			looksright = true;
-			looksleft = false;
-		}
-		if (transform.eulerAngles.y != 90)
+		targetVelocity = new Vector3(vertical, 0, horizontal);
+		targetVelocity = transform.TransformDirection(targetVelocity);
+		targetVelocity *= speed;
+		if (Input.GetKeyDown(KeyCode.RightArrow))
 		{
-			looksright = false;
-			looksleft = true;
+			transform.rotation = Quaternion.Euler(0, 90, 0);
 		}
-		if (Input.GetKeyDown(KeyCode.LeftArrow) && looksright || Input.GetKeyDown(KeyCode.RightArrow) && looksleft)
+		if (Input.GetKey(KeyCode.LeftArrow))
 		{
-			Quaternion originalRot = transform.rotation;
-			transform.rotation = originalRot * Quaternion.Euler(0, 180, 0);
+			transform.rotation = Quaternion.Euler(0, -90, 0);
+			targetVelocity[0] = targetVelocity[0] * -1;
+		}
+		if (Input.GetKeyUp(KeyCode.LeftArrow))
+		{
+			
+			targetVelocity[0] = targetVelocity[0] * -1;
 		}
 	}
 	void FixedUpdate()
 	{
-		float horizontal = Input.GetAxis("Horizontal");
-		float vertical = Input.GetAxis("Vertical");
+		horizontal = Input.GetAxis("Horizontal");
+		vertical = Input.GetAxis("Vertical");
 		bool hasHorizontalInput = !Mathf.Approximately(horizontal, 0f);
 		bool hasVerticalInput = !Mathf.Approximately(vertical, 0f);
 		bool isWalking = hasHorizontalInput || hasVerticalInput;
 		animator.SetBool("iswalking", isWalking);
 
-		
-		// Calculate how fast we should be moving
-		Vector3 targetVelocity = new Vector3(Input.GetAxis("Vertical"), 0, Input.GetAxis("Horizontal"));
-			targetVelocity = transform.TransformDirection(targetVelocity);
-			targetVelocity *= speed;
 
-			// Apply a force that attempts to reach our target velocity
-			Vector3 velocity = GetComponent<Rigidbody>().velocity;
+		// Apply a force that attempts to reach our target velocity
+		Vector3 velocity = GetComponent<Rigidbody>().velocity;
 			Vector3 velocityChange = (targetVelocity - velocity);
 			velocityChange.x = Mathf.Clamp(velocityChange.x, -maxVelocityChange, maxVelocityChange);
 			velocityChange.z = Mathf.Clamp(velocityChange.z, -maxVelocityChange, maxVelocityChange);
 			velocityChange.y = 0;
 			GetComponent<Rigidbody>().AddForce(velocityChange, ForceMode.VelocityChange);
-
-			// Jump
-			if (canJump && grounded && Input.GetButton("Jump"))
+		Debug.Log(targetVelocity);
+		// Jump
+		if (canJump && grounded && Input.GetButton("Jump"))
 			{
 				GetComponent<Rigidbody>().velocity = new Vector3(velocity.x, CalculateJumpVerticalSpeed(), velocity.z);
 			}
@@ -79,7 +74,7 @@ public class CharacterControls : MonoBehaviour
 
 		grounded = false;
 	}
-
+	
 	void OnCollisionStay()
 	{
 		grounded = true;

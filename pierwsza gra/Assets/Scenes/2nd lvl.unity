@@ -3385,7 +3385,7 @@ PrefabInstance:
     - target: {fileID: 2187848114132662414, guid: 954e425e2191f6f44a402434919a4f3b,
         type: 3}
       propertyPath: springForce
-      value: 1500
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 2187848114132662415, guid: 954e425e2191f6f44a402434919a4f3b,
         type: 3}
