@@ -8,7 +8,10 @@ public class changebackground : MonoBehaviour
     
     private SpriteRenderer tlo;
   
- 
+ void destroy()
+    {
+        Destroy(gameObject, 2f);
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +34,7 @@ public class changebackground : MonoBehaviour
             
             StartCoroutine("FadeOut");
             Debug.Log("zmianatla");
-           // hit1 = true;
+            destroy();
         }
     }
     IEnumerator FadeOut()
@@ -52,19 +55,5 @@ public class changebackground : MonoBehaviour
 
         }
 
-    }
-
-
-
-    
-    
-
-    // void Update()
-    // {
-
-    //  if (hit1)
-    //  {
-    //    tlo.color = new Color(1f, 1f, 1f, Mathf.SmoothDamp(0f, 1f, ref speed, max));
-    // }
-    // }       
+    }    
 }

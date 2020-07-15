@@ -18,6 +18,10 @@ public class CharacterControls : MonoBehaviour
 	public float horizontal;
 	public float vertical;
 	Vector3 targetVelocity;
+	public float tenSec = 10;
+	public bool timerRunning = true;
+	int i;
+	float countDown;
 	void Awake()
 	{
 		GetComponent<Rigidbody>().freezeRotation = true;
@@ -40,11 +44,25 @@ public class CharacterControls : MonoBehaviour
 		}
 		if (Input.GetKeyUp(KeyCode.LeftArrow))
 		{
-			
-			targetVelocity[0] = targetVelocity[0] * -1;
+
+			StartCoroutine(StartCounter());
+		}
+
+	}
+	private IEnumerator StartCounter()
+	{
+		countDown = 0.15f;
+		for (int i = 0; i < 10000; i++)
+		{
+			while (countDown >= 0)
+			{
+				targetVelocity[0] = targetVelocity[0] * -1;
+				countDown -= Time.smoothDeltaTime;
+				yield return null;
+			}
 		}
 	}
-	void FixedUpdate()
+		void FixedUpdate()
 	{
 		horizontal = Input.GetAxis("Horizontal");
 		vertical = Input.GetAxis("Vertical");

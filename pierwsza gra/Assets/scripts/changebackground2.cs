@@ -7,8 +7,11 @@ public class changebackground2 : MonoBehaviour
 {
 
     private SpriteRenderer tlo;
-  
 
+    void destroy()
+    {
+        Destroy(gameObject, 2f);
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +33,7 @@ public class changebackground2 : MonoBehaviour
            
             StartCoroutine("FadeOut");
             Debug.Log("zmianatla2");
+            destroy();
         }
     }
     IEnumerator FadeOut()
