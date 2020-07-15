@@ -61,7 +61,7 @@ public class CharacterControls : MonoBehaviour
 			velocityChange.z = Mathf.Clamp(velocityChange.z, -maxVelocityChange, maxVelocityChange);
 			velocityChange.y = 0;
 			GetComponent<Rigidbody>().AddForce(velocityChange, ForceMode.VelocityChange);
-		Debug.Log(targetVelocity);
+		//Debug.Log(targetVelocity);
 		// Jump
 		if (canJump && grounded && Input.GetButton("Jump"))
 			{
