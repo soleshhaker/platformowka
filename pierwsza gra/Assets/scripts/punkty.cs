@@ -20,5 +20,6 @@ public class punkty : MonoBehaviour
     void Update()
     {
         score.text = "Punkty: " + scoreValue;
+         Debug.Log(playeritems.Speedpotion);
     }
 }

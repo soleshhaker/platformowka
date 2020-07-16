@@ -52,7 +52,7 @@ public class itemdescription2 : MonoBehaviour
             istext = 1;
 
 
-            Debug.Log(inventory.speedpotionobtained);
+            Debug.Log(playeritems.Speedpotion);
         }
     }
 
@@ -73,14 +73,14 @@ public class itemdescription2 : MonoBehaviour
         Debug.Log(speed);
 
         Invoke("endpotion(speed)", 30);
-        inventory.speedpotionobtained -= 1;
+        playeritems.Speedpotion -= 1;
         istext = 1;
-        if (inventory.speedpotionobtained == 0)
+        if (playeritems.Speedpotion == 0)
         {
 
 
-            speedpotion.spdpotion.GetComponent<Image>().enabled = false;
-            speedpotion.speedpotionslot.GetComponent<Image>().enabled = false;
+            GameObject.Find("Image2").GetComponent<Image>().enabled = false;
+            GameObject.Find("InventorySlot2").GetComponent<Image>().enabled = false;
             
         }
 

@@ -30,7 +30,7 @@ public class itemdescription : MonoBehaviour
             objToSpawn.AddComponent<Text>();
             objToSpawn.transform.SetParent(ui.transform);
             objToSpawn.transform.position = new Vector3(300, 0, 3);
-            objToSpawn.GetComponent<RectTransform>().localPosition = new Vector3 (10, -390, 1);
+            objToSpawn.GetComponent<RectTransform>().localPosition = new Vector3 (10, -170, 1);
             objToSpawn.GetComponent<RectTransform>().sizeDelta = new Vector2(400, 60);
             objToSpawn.GetComponent<Text>().text = "Magical Dust that allows to reach more maximum speed";
             objToSpawn.GetComponent<Text>().font = Resources.GetBuiltinResource(typeof(Font), "Arial.ttf") as Font;

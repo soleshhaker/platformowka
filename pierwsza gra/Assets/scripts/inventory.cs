@@ -4,10 +4,8 @@ using UnityEngine.UI;
 
 public class inventory : MonoBehaviour
 {
-    public Canvas CanvasObject; // Assign in inspector
+    public Canvas CanvasObject; 
     int isinventoryon = 0;
-    static public int speedpotionobtained = 0;
-    static public int dustobtained = 0;
     void Start()
     {
         CanvasObject = GetComponent<Canvas>();
@@ -21,17 +19,18 @@ public class inventory : MonoBehaviour
             GetComponent<CanvasGroup>().interactable = false;
             GetComponent<CanvasGroup>().blocksRaycasts = false;
             isinventoryon = 1;
-            if (dustobtained > 0)
+            if (playeritems.Bluedust > 0)
             {
                 bluedust.dust.GetComponent<Image>().raycastTarget = true;
                 bluedust.dust.GetComponent<Image>().raycastTarget = true;
             }
-            if (speedpotionobtained > 0)
+            if (playeritems.Speedpotion > 0)
             {
-
-
-                speedpotion.spdpotion.GetComponent<Image>().raycastTarget = true;
-                speedpotion.speedpotionslot.GetComponent<Image>().raycastTarget = true;
+                Debug.Log("slot on");
+                GameObject.Find("Image2").GetComponent<Image>().enabled = true;
+                GameObject.Find("Image2").GetComponent<Image>().raycastTarget = true;
+                GameObject.Find("InventorySlot2").GetComponent<Image>().enabled = true;
+                GameObject.Find("InventorySlot2").GetComponent<Image>().raycastTarget = true;
             }
             
 

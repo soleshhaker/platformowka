@@ -20,7 +20,8 @@ public class bluedust : MonoBehaviour
         {
             dust.GetComponent<Image>().enabled = true;
             dustslot.GetComponent<Image>().enabled = true;
-            inventory.dustobtained += 1;
+
+            playeritems.Bluedust += 1;
 
 
             Destroy(gameObject);

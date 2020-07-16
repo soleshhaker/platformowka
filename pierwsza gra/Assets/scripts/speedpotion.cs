@@ -28,7 +28,7 @@ public class speedpotion : MonoBehaviour
         {
             spdpotion.GetComponent<Image>().enabled = true;
             speedpotionslot.GetComponent<Image>().enabled = true;
-            inventory.speedpotionobtained += 1;
+            playeritems.Speedpotion += 1;
 
             Destroy(gameObject);
         }
