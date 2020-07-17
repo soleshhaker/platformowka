@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class playeritems
 {
-    private static int speedpotion, score, bluedust, points;
+    private static int speedpotion, score, bluedust, jump;
 
     public static int Speedpotion
     {
@@ -39,6 +39,18 @@ public static class playeritems
         set
         {
            bluedust = value;
+        }
+    }
+
+    public static int Jump
+    {
+        get
+        {
+            return jump;
+        }
+        set
+        {
+            jump = value;
         }
     }
 

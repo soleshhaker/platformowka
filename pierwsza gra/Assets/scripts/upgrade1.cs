@@ -14,14 +14,14 @@ public class upgrade1 : MonoBehaviour
     {
         obj = GameObject.Find("upgradetext");
 
-        if (col.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.Return) && punkty.scoreValue >= 300)
+        if (col.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.Return) && playeritems.Score >= 300)
         {
             Debug.Log("skrypt");
-            punkty.scoreValue -= 300;
+            playeritems.Score -= 300;
             source = GetComponent<AudioSource>();
             source.Play();
             Debug.Log("ulepszono");
-            CharacterControls.jumpHeight += 2;
+            playeritems.Jump += 2;
             upgradetext.upgradestatus = "Jump upgraded";
 
             Destroy(obj, 2f);

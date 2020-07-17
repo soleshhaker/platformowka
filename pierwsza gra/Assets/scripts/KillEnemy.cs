@@ -14,7 +14,7 @@ public class KillEnemy : MonoBehaviour
         float speed = 300.0f;
         if (col.gameObject.tag == "Player")
         {
-            punkty.scoreValue += 30;
+            playeritems.Score += 30;
             source = GetComponent<AudioSource>();
             source.Play();
 

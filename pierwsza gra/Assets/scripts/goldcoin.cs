@@ -13,7 +13,7 @@ public class goldcoin : MonoBehaviour
         if (col.gameObject.name == "GoldCoin")
         {
             Destroy(col.transform.parent.gameObject);
-            punkty.scoreValue += 20;
+            playeritems.Score += 20;
             source.Play();
         }
     }

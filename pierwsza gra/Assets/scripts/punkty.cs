@@ -19,7 +19,7 @@ public class punkty : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        score.text = "Punkty: " + scoreValue;
-         Debug.Log(playeritems.Speedpotion);
+        score.text = "Punkty: " + playeritems.Score;
+        
     }
 }

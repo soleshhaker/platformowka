@@ -102,6 +102,6 @@ public class CharacterControls : MonoBehaviour
 	{
 		// From the jump height and gravity we deduce the upwards speed 
 		// for the character to reach at the apex.
-		return Mathf.Sqrt(2 * jumpHeight * gravity);
+		return Mathf.Sqrt(2 * (jumpHeight + playeritems.Jump) * gravity);
 	}
 }
