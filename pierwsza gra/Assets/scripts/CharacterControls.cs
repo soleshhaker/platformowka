@@ -9,17 +9,15 @@ public class CharacterControls : MonoBehaviour
 {
 
 	public static float speed = 12.0f;
-	public float gravity = 10.0f;
-	public float maxVelocityChange = 10.0f;
+	private float gravity = 10.0f;
+	private float maxVelocityChange = 10.0f;
 	public bool canJump = true;
 	Animator animator;
-	public static float jumpHeight = 2.0f;
+	public float jumpHeight = 2.0f;
 	private bool grounded = false;
-	public float horizontal;
-	public float vertical;
+	private float horizontal;
+	private float vertical;
 	Vector3 targetVelocity;
-	public float tenSec = 10;
-	public bool timerRunning = true;
 	int i;
 	float countDown;
 	void Awake()
