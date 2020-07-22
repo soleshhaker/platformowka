@@ -15,15 +15,14 @@ public class changebackground4 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        tlo = GameObject.Find("tlo2").GetComponent<SpriteRenderer>();
+        tlo = GameObject.Find("tlo").GetComponent<SpriteRenderer>();
 
 
         Color c = tlo.material.color;
 
-        c.a = 0f;
+        c.a = 1f;
 
         tlo.material.color = c;
-
     }
 
     // Update is called once per frame
@@ -33,7 +32,7 @@ public class changebackground4 : MonoBehaviour
         {
 
             StartCoroutine("FadeOut");
-            Debug.Log("zmianatla");
+            Debug.Log("zmianatla2");
             destroy();
         }
     }
@@ -41,7 +40,7 @@ public class changebackground4 : MonoBehaviour
 
     {
 
-        for (float f = 0f; f <= 1f; f += 0.05f)
+        for (float f = 1f; f >= -0.05f; f -= 0.05f)
 
         {
 
@@ -54,6 +53,5 @@ public class changebackground4 : MonoBehaviour
             yield return new WaitForSeconds(0.05f);
 
         }
-
     }
 }

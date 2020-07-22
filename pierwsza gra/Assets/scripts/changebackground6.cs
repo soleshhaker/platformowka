@@ -20,7 +20,7 @@ public class changebackground6 : MonoBehaviour
 
         Color c = tlo.material.color;
 
-        c.a = 1f;
+        c.a = 0f;
 
         tlo.material.color = c;
     }
