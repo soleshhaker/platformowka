@@ -14,11 +14,17 @@ public class itemdescription2 : MonoBehaviour
     float speed;
     public TextAlignmentOptions alignment { get; set; }
 
+    void Update()
+    {
+        speed = speedpotion.speedvalue;
+        
+    }
+
     void Awake()
     {
         ui = GameObject.Find("status");
         int istext = 0;
-        speed = speedpotion.speedvalue;
+        //speed = speedpotion.speedvalue;
         Debug.Log(speed);
     }
 
@@ -31,10 +37,7 @@ public class itemdescription2 : MonoBehaviour
     {
         CharacterControls.speed -= speed;
     }
-    void Update()
-    {
-        
-    }
+ 
     public void OnPointerEnter(PointerEventData eventData)
     {
         ui = GameObject.Find("status");
@@ -66,13 +69,14 @@ public class itemdescription2 : MonoBehaviour
     public void OnPointerClick(PointerEventData eventData)
     {
         ui = GameObject.Find("status");
-        Debug.Log("Pointer Click");
+        Debug.Log(speed);
 
         objToSpawn.GetComponent<Text>().text = "Potion used!";
         usepotion(speed);
-        Debug.Log(speed);
+        
+        Debug.Log(CharacterControls.speed);
 
-        Invoke("endpotion(speed)", 30);
+        //Invoke("endpotion(speed)", 30);
         playeritems.Speedpotion -= 1;
         istext = 1;
         if (playeritems.Speedpotion == 0)

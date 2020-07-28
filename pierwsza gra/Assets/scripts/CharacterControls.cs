@@ -13,7 +13,7 @@ public class CharacterControls : MonoBehaviour
 	private float maxVelocityChange = 10.0f;
 	public bool canJump = true;
 	Animator animator;
-	public float jumpHeight = 2.0f;
+	public static float jumpHeight = 2.0f;
 	private bool grounded = false;
 	private float horizontal;
 	private float vertical;
@@ -28,6 +28,8 @@ public class CharacterControls : MonoBehaviour
 	}
 	void Update()
     {
+		
+		Debug.Log(speed);
 		targetVelocity = new Vector3(vertical, 0, horizontal);
 		targetVelocity = transform.TransformDirection(targetVelocity);
 		targetVelocity *= speed;

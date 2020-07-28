@@ -32,7 +32,15 @@ public class inventory : MonoBehaviour
                 GameObject.Find("InventorySlot2").GetComponent<Image>().enabled = true;
                 GameObject.Find("InventorySlot2").GetComponent<Image>().raycastTarget = true;
             }
-            
+            if (playeritems.Jumppotion > 0)
+            {
+                Debug.Log("slot on");
+                GameObject.Find("Image3").GetComponent<Image>().enabled = true;
+                GameObject.Find("Image3").GetComponent<Image>().raycastTarget = true;
+                GameObject.Find("InventorySlot3").GetComponent<Image>().enabled = true;
+                GameObject.Find("InventorySlot3").GetComponent<Image>().raycastTarget = true;
+            }
+
 
         }
         else if (Input.GetKeyUp(KeyCode.Escape) && isinventoryon == 1)
