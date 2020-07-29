@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using TMPro;
 
 public class inventory : MonoBehaviour
 {
@@ -31,6 +32,8 @@ public class inventory : MonoBehaviour
                 GameObject.Find("Image2").GetComponent<Image>().raycastTarget = true;
                 GameObject.Find("InventorySlot2").GetComponent<Image>().enabled = true;
                 GameObject.Find("InventorySlot2").GetComponent<Image>().raycastTarget = true;
+                GameObject.Find("Image2text").GetComponent<TextMeshProUGUI>().enabled = true;
+                GameObject.Find("Image2text").GetComponent<TextMeshProUGUI>().SetText(playeritems.Speedpotion.ToString());
             }
             if (playeritems.Jumppotion > 0)
             {
@@ -39,6 +42,8 @@ public class inventory : MonoBehaviour
                 GameObject.Find("Image3").GetComponent<Image>().raycastTarget = true;
                 GameObject.Find("InventorySlot3").GetComponent<Image>().enabled = true;
                 GameObject.Find("InventorySlot3").GetComponent<Image>().raycastTarget = true;
+                GameObject.Find("Image3text").GetComponent<TextMeshProUGUI>().enabled = true;
+                GameObject.Find("Image3text").GetComponent<TextMeshProUGUI>().SetText(playeritems.Jumppotion.ToString());
             }
 
 

@@ -11,7 +11,7 @@ public class jumppotion : MonoBehaviour
 
     void Awake()
     {
-        jumpvalue = 20;
+        jumpvalue = 2;
 
     }
     void Start()

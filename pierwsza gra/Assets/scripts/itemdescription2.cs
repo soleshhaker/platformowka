@@ -84,6 +84,7 @@ public class itemdescription2 : MonoBehaviour
 
 
             GameObject.Find("Image2").GetComponent<Image>().enabled = false;
+            GameObject.Find("Image2text").GetComponent<TextMeshProUGUI>().enabled = false;
             GameObject.Find("InventorySlot2").GetComponent<Image>().enabled = false;
             
         }
