@@ -9,7 +9,7 @@ public class goldcoin : MonoBehaviour
     AudioSource source;
     void OnTriggerEnter(Collider col)
     {
-        source = GetComponent<AudioSource>();
+        source = GameObject.Find("coinsound").GetComponent<AudioSource>();
         if (col.gameObject.name == "GoldCoin")
         {
             Destroy(col.transform.parent.gameObject);

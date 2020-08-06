@@ -7,15 +7,18 @@ public class KillPlayer : MonoBehaviour
 
 {
     public GameObject Player;
-
+    AudioSource source;
 
 
     void OnCollisionEnter (Collision col)
     {
         Player = GameObject.Find("player");
+        source = GameObject.Find("deathsound").GetComponent<AudioSource>();
         if (col.gameObject.tag == "Player")
         {
+            
             Destroy(Player);
+            source.Play();
             playeritems.Score --;
         }
     }
