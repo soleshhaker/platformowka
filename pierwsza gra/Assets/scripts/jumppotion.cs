@@ -8,7 +8,7 @@ public class jumppotion : MonoBehaviour
     static public GameObject jmppotion;
     static public GameObject jumppotionslot;
     static public int jumpvalue;
-
+    AudioSource source;
     void Awake()
     {
         jumpvalue = 2;
@@ -23,15 +23,15 @@ public class jumppotion : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-
+        source = GetComponent<AudioSource>();
         if (col.gameObject.tag == "Player")
         {
             
             jmppotion.GetComponent<Image>().enabled = true;
             jumppotionslot.GetComponent<Image>().enabled = true;
             playeritems.Jumppotion += 1;
-
-            Destroy(gameObject);
+            source.Play();
+            Destroy(gameObject, 0.1f);
         }
     }
 }
