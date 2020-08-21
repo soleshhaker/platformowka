@@ -13,7 +13,7 @@ public class itemdescription2 : MonoBehaviour
     int istext;
     float speed;
     public TextAlignmentOptions alignment { get; set; }
-
+    AudioSource source;
     void Update()
     {
         speed = speedpotion.speedvalue;
@@ -70,7 +70,8 @@ public class itemdescription2 : MonoBehaviour
     {
         ui = GameObject.Find("status");
         Debug.Log(speed);
-
+        source = GetComponent<AudioSource>();
+        source.Play();
         objToSpawn.GetComponent<Text>().text = "Potion used!";
         usepotion(speed);
         

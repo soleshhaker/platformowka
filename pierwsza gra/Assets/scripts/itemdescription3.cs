@@ -13,7 +13,7 @@ public class itemdescription3 : MonoBehaviour
     int istext;
     int jump;
     public TextAlignmentOptions alignment { get; set; }
-
+    AudioSource source;
     void Awake()
     {
         ui = GameObject.Find("status");
@@ -67,7 +67,8 @@ public class itemdescription3 : MonoBehaviour
     {
         ui = GameObject.Find("status");
         Debug.Log("Pointer Click");
-
+        source = GetComponent<AudioSource>();
+        source.Play();
         objToSpawn.GetComponent<Text>().text = "Potion used!";
         usepotion(jump);
         Debug.Log(jump);

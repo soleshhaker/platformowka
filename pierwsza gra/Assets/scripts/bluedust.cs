@@ -7,6 +7,7 @@ public class bluedust : MonoBehaviour
 {
     public static GameObject dust;
     public static GameObject dustslot;
+    AudioSource source;
     void Start()
     {
         dust = GameObject.Find("Image");
@@ -22,9 +23,10 @@ public class bluedust : MonoBehaviour
             dustslot.GetComponent<Image>().enabled = true;
 
             playeritems.Bluedust += 1;
+            source = GetComponent<AudioSource>();
+            source.Play();
 
-
-            Destroy(gameObject);
+            Destroy(gameObject, 0.2f);
         }
     }
 }
