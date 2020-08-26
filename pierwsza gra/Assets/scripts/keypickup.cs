@@ -13,6 +13,10 @@ public class keypickup : MonoBehaviour
         key = GameObject.Find("Image4");
         keyslot = GameObject.Find("InventorySlot4");
     }
+    public void gaterestart()
+    {
+        gate1.gatestatus = null;
+    }
 
     void OnTriggerEnter(Collider col)
     {
@@ -23,10 +27,13 @@ public class keypickup : MonoBehaviour
             keyslot.GetComponent<Image>().enabled = true;
 
             playeritems.Key += 1;
+            gate1.gatestatus = "You picked up a key";
+            Invoke("gaterestart", 3);
             source = GetComponent<AudioSource>();
             source.Play();
-
-            Destroy(gameObject, 0.2f);
+            GetComponent<Collider>().enabled = false;
+            GetComponentInChildren<MeshRenderer>().enabled = false;
+            Destroy(gameObject, 3f);
         }
     }
 }
