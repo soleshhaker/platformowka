@@ -12,7 +12,7 @@ public class KillPlayer : MonoBehaviour
 
     void OnCollisionEnter (Collision col)
     {
-        Player = GameObject.Find("player");
+        Player = GameObject.FindWithTag("Player");
         source = GameObject.Find("deathsound").GetComponent<AudioSource>();
         if (col.gameObject.tag == "Player")
         {

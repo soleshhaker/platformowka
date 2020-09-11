@@ -29,7 +29,7 @@ public class CharacterControls : MonoBehaviour
 	void Update()
     {
 		
-		Debug.Log(speed);
+		
 		targetVelocity = new Vector3(vertical, 0, horizontal);
 		targetVelocity = transform.TransformDirection(targetVelocity);
 		targetVelocity *= speed;
