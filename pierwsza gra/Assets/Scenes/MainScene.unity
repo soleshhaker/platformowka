@@ -1147,6 +1147,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 801028797}
   m_CullTransparentMesh: 0
+--- !u!1 &808290781 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7478225697116208144, guid: 6fb37f825ee63264b9c2600bf1a52006,
+    type: 3}
+  m_PrefabInstance: {fileID: 223369068}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &875385718
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2788,6 +2794,7 @@ MonoBehaviour:
   waypoints:
   - {fileID: 429404449}
   - {fileID: 1632693168}
+  Player: {fileID: 0}
 --- !u!4 &1864828200 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4279449019447086, guid: eded051879df4c147b9010199d240258,
@@ -3418,6 +3425,11 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[1]
       value: 
       objectReference: {fileID: 894947189}
+    - target: {fileID: 2303436190469791481, guid: e400db862a5d87a4b84cca39dcd25212,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 808290781}
     - target: {fileID: 2490430375244583633, guid: e400db862a5d87a4b84cca39dcd25212,
         type: 3}
       propertyPath: m_Enabled
@@ -3430,6 +3442,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2303436190328111258, guid: e400db862a5d87a4b84cca39dcd25212, type: 3}
+    - {fileID: 8029317315409950700, guid: e400db862a5d87a4b84cca39dcd25212, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e400db862a5d87a4b84cca39dcd25212, type: 3}
 --- !u!1001 &7689971501168690380
 PrefabInstance:

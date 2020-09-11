@@ -12,19 +12,22 @@ public class CharacterControls : MonoBehaviour
 	private float gravity = 10.0f;
 	private float maxVelocityChange = 10.0f;
 	public bool canJump = true;
-	Animator animator;
+	public Animator animator;
 	public static float jumpHeight = 2.0f;
 	private bool grounded = false;
 	private float horizontal;
 	private float vertical;
 	Vector3 targetVelocity;
+	private Rigidbody rigidbody;
 	int i;
 	float countDown;
 	void Awake()
 	{
 		GetComponent<Rigidbody>().freezeRotation = true;
 		GetComponent<Rigidbody>().useGravity = false;
-		animator = GetComponent<Animator>();
+		
+		
+		rigidbody = GetComponent<Rigidbody>();
 	}
 	void Update()
     {
@@ -73,22 +76,22 @@ public class CharacterControls : MonoBehaviour
 
 
 		// Apply a force that attempts to reach our target velocity
-		Vector3 velocity = GetComponent<Rigidbody>().velocity;
+		Vector3 velocity = rigidbody.velocity;
 			Vector3 velocityChange = (targetVelocity - velocity);
 			velocityChange.x = Mathf.Clamp(velocityChange.x, -maxVelocityChange, maxVelocityChange);
 			velocityChange.z = Mathf.Clamp(velocityChange.z, -maxVelocityChange, maxVelocityChange);
 			velocityChange.y = 0;
-			GetComponent<Rigidbody>().AddForce(velocityChange, ForceMode.VelocityChange);
+			rigidbody.AddForce(velocityChange, ForceMode.VelocityChange);
 		//Debug.Log(targetVelocity);
 		// Jump
 		if (canJump && grounded && Input.GetButton("Jump"))
 			{
-				GetComponent<Rigidbody>().velocity = new Vector3(velocity.x, CalculateJumpVerticalSpeed(), velocity.z);
+				rigidbody.velocity = new Vector3(velocity.x, CalculateJumpVerticalSpeed(), velocity.z);
 			}
 		
 
 		// We apply gravity manually for more tuning control
-		GetComponent<Rigidbody>().AddForce(new Vector3(0, -gravity * GetComponent<Rigidbody>().mass, 0));
+		rigidbody.AddForce(new Vector3(0, -gravity * GetComponent<Rigidbody>().mass, 0));
 
 		grounded = false;
 	}

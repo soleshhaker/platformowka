@@ -866,7 +866,6 @@ GameObject:
   - component: {fileID: 395734089999272269}
   - component: {fileID: 2303436190469791477}
   - component: {fileID: 2303436190469791481}
-  - component: {fileID: 8029317315409950700}
   m_Layer: 0
   m_Name: spider
   m_TagString: Spider
@@ -976,18 +975,6 @@ MonoBehaviour:
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
---- !u!114 &8029317315409950700
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1087688156337115443}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f9efa8fafcdf8b45a71038ebdbc6d74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   Player: {fileID: 0}
 --- !u!1 &1087688156337115445
 GameObject:

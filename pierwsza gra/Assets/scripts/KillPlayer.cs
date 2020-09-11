@@ -17,7 +17,7 @@ public class KillPlayer : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             
-            Destroy(Player);
+            Destroy(col.gameObject);
             source.Play();
             playeritems.Score --;
         }

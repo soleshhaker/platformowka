@@ -18,7 +18,7 @@ public class KillEnemy : MonoBehaviour
             source = GetComponent<AudioSource>();
             source.Play();
 
-            GameObject.FindWithTag("Player").GetComponent<Rigidbody>().AddForce(Vector3.up * speed);
+            col.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * speed);
 
             Destroy(transform.parent.parent.gameObject, 0.1f);
             

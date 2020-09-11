@@ -2280,8 +2280,19 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8022254399148308687, guid: 2db03e7c8a8135146b280e5da7e0289c,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 5303887387983250723}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2db03e7c8a8135146b280e5da7e0289c, type: 3}
+--- !u!95 &5303887387983250723 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6252356961367914557, guid: 2db03e7c8a8135146b280e5da7e0289c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2260777316498865438}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5303887387992812389 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6252356961376966267, guid: 2db03e7c8a8135146b280e5da7e0289c,

@@ -217,6 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canJump: 1
+  animator: {fileID: 7478225697108807222}
 --- !u!136 &542120633412930736
 CapsuleCollider:
   m_ObjectHideFlags: 0

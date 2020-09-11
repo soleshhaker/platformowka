@@ -2593,17 +2593,17 @@ PrefabInstance:
     - target: {fileID: 3158103670696700406, guid: 36dac964ab2320e4381deb5180a1e885,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.21116108
+      value: 0.38229966
       objectReference: {fileID: 0}
     - target: {fileID: 3158103670696700406, guid: 36dac964ab2320e4381deb5180a1e885,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.385539
+      value: 1.7625855
       objectReference: {fileID: 0}
     - target: {fileID: 3158103670696700406, guid: 36dac964ab2320e4381deb5180a1e885,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.971621
+      value: -15.456012
       objectReference: {fileID: 0}
     - target: {fileID: 3158103670696700406, guid: 36dac964ab2320e4381deb5180a1e885,
         type: 3}
@@ -8066,6 +8066,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2399855174966628353, guid: 6fb37f825ee63264b9c2600bf1a52006,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1687319894}
     - target: {fileID: 5278018976291817703, guid: 6fb37f825ee63264b9c2600bf1a52006,
         type: 3}
       propertyPath: m_Constraints
@@ -8152,6 +8157,12 @@ PrefabInstance:
 --- !u!1 &1687319889 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7478225697116208144, guid: 6fb37f825ee63264b9c2600bf1a52006,
+    type: 3}
+  m_PrefabInstance: {fileID: 1687319888}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1687319894 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7478225697108807222, guid: 6fb37f825ee63264b9c2600bf1a52006,
     type: 3}
   m_PrefabInstance: {fileID: 1687319888}
   m_PrefabAsset: {fileID: 0}
