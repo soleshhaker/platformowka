@@ -21,7 +21,7 @@ public class KillEnemy : MonoBehaviour
             col.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * speed);
 
             Destroy(transform.parent.parent.gameObject, 0.1f);
-            
+
         }
     }
 }
