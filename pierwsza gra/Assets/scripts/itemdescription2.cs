@@ -30,12 +30,12 @@ public class itemdescription2 : MonoBehaviour
 
     void usepotion(float speed)
     {
-        CharacterControls.speed += speed;
+        Player.speed += speed;
     }
 
     void endpotion(float speed)
     {
-        CharacterControls.speed -= speed;
+        Player.speed -= speed;
     }
  
     public void OnPointerEnter(PointerEventData eventData)
@@ -75,9 +75,9 @@ public class itemdescription2 : MonoBehaviour
         objToSpawn.GetComponent<Text>().text = "Potion used!";
         usepotion(speed);
         
-        Debug.Log(CharacterControls.speed);
+      //  Debug.Log(Player.speed);
 
-        //Invoke("endpotion(speed)", 30);
+        Invoke("endpotion(speed)", 30);
         playeritems.Speedpotion -= 1;
         istext = 1;
         if (playeritems.Speedpotion == 0)

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 [RequireComponent(typeof(Rigidbody))]
 
 
-public class CharacterControls : MonoBehaviour
+public class Player : MonoBehaviour
 {
 
 	public static float speed = 12.0f;
@@ -21,6 +21,18 @@ public class CharacterControls : MonoBehaviour
 	private Rigidbody rigidbody;
 	int i;
 	float countDown;
+	AudioSource source;
+
+	void OnTriggerEnter(Collider col)
+	{
+		source = GameObject.Find("coinsound").GetComponent<AudioSource>();
+		if (col.gameObject.name == "GoldCoin")
+		{
+			Destroy(col.transform.parent.gameObject);
+			playeritems.Score += 20;
+			source.Play();
+		}
+	}
 	void Awake()
 	{
 		GetComponent<Rigidbody>().freezeRotation = true;
@@ -29,6 +41,7 @@ public class CharacterControls : MonoBehaviour
 		
 		rigidbody = GetComponent<Rigidbody>();
 	}
+
 	void Update()
     {
 		
