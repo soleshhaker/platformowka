@@ -18,7 +18,7 @@ public class gatelvl3 : MonoBehaviour
     {
         BoxCollider gatecolider;
 
-        if (col.gameObject.tag == "Player" && playeritems.Bluedust > 0)
+        if (col.gameObject.tag == "Player" && Player.bluedust > 0)
         {
             gate1.gatestatus = "You can pass";
             Invoke("gaterestart", 3);
@@ -27,7 +27,7 @@ public class gatelvl3 : MonoBehaviour
             Application.Quit();
         }
 
-        if (col.gameObject.tag == "Player" && playeritems.Bluedust == 0)
+        if (col.gameObject.tag == "Player" && Player.bluedust == 0)
         {
             gate1.gatestatus = "You need blue dust";
             Invoke("gaterestart", 3);

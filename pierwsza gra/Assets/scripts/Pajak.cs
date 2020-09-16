@@ -8,7 +8,6 @@ public class Pajak : MonoBehaviour
     public NavMeshAgent navMeshAgent;
     public Transform[] waypoints;
     int m_CurrentWaypointIndex;
-    public GameObject Player;
     AudioSource source;
 
     void Start()
@@ -31,14 +30,14 @@ public class Pajak : MonoBehaviour
     }
     void OnCollisionEnter(Collision col)
     {
-        Player = GameObject.FindWithTag("Player");
+       
         source = GameObject.Find("deathsound").GetComponent<AudioSource>();
         if (col.gameObject.tag == "Player")
         {
 
             Destroy(col.gameObject);
             source.Play();
-            playeritems.Score--;
+            Player.score--;
         }
     }
 }

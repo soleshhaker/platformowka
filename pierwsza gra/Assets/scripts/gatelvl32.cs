@@ -16,7 +16,7 @@ public class gatelvl32 : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        int key = playeritems.Key;
+        int key = Player.key;
         BoxCollider gatecolider;
         
         if (col.gameObject.tag == "Player" && key > 0)

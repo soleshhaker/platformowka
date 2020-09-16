@@ -13,25 +13,22 @@ public class changebackground : MonoBehaviour
         Destroy(gameObject, 2f);
     }
     // Start is called before the first frame update
-    void Start()
-    {
-        tlo = GameObject.Find("tlo2").GetComponent<SpriteRenderer>();
 
-
-        Color c = tlo.material.color;
-
-        c.a = 0f;
-
-        tlo.material.color = c;
-
-    }
 
     // Update is called once per frame
     void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Player")
         {
-            
+            tlo = GameObject.Find("tlo3").GetComponent<SpriteRenderer>();
+
+
+            Color c = tlo.material.color;
+
+            c.a = 0f;
+
+            tlo.material.color = c;
+
             StartCoroutine("FadeOut");
             Debug.Log("zmianatla");
             destroy();

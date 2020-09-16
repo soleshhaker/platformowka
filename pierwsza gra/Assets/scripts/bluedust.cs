@@ -22,7 +22,7 @@ public class bluedust : MonoBehaviour
             dust.GetComponent<Image>().enabled = true;
             dustslot.GetComponent<Image>().enabled = true;
 
-            playeritems.Bluedust += 1;
+            Player.bluedust += 1;
             source = GetComponent<AudioSource>();
             source.Play();
 

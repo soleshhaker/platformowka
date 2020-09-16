@@ -24,12 +24,12 @@ public class itemdescription3 : MonoBehaviour
 
     void usepotion(int jump)
     {
-        playeritems.Jump += jump;
+        Player.jump += jump;
     }
 
     void endpotion(int jump)
     {
-        playeritems.Jump -= jump;
+        Player.jump -= jump;
     }
     void Update()
     {
@@ -52,7 +52,7 @@ public class itemdescription3 : MonoBehaviour
             istext = 1;
 
 
-            Debug.Log(playeritems.Jumppotion);
+            Debug.Log(Player.jumppotion);
         }
     }
 
@@ -74,9 +74,9 @@ public class itemdescription3 : MonoBehaviour
         Debug.Log(jump);
 
         Invoke("endpotion(jump)", 30);
-        playeritems.Jumppotion -= 1;
+        Player.jumppotion -= 1;
         istext = 1;
-        if (playeritems.Jumppotion == 0)
+        if (Player.jumppotion == 0)
         {
 
 

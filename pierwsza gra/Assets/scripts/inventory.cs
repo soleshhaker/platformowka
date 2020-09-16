@@ -20,12 +20,12 @@ public class inventory : MonoBehaviour
             GetComponent<CanvasGroup>().interactable = false;
             GetComponent<CanvasGroup>().blocksRaycasts = false;
             isinventoryon = 1;
-            if (playeritems.Bluedust > 0)
+            if (Player.bluedust > 0)
             {
                 bluedust.dust.GetComponent<Image>().raycastTarget = true;
                 bluedust.dust.GetComponent<Image>().raycastTarget = true;
             }
-            if (playeritems.Speedpotion > 0)
+            if (Player.speedpotion > 0)
             {
                 Debug.Log("slot on");
                 GameObject.Find("Image2").GetComponent<Image>().enabled = true;
@@ -33,9 +33,9 @@ public class inventory : MonoBehaviour
                 GameObject.Find("InventorySlot2").GetComponent<Image>().enabled = true;
                 GameObject.Find("InventorySlot2").GetComponent<Image>().raycastTarget = true;
                 GameObject.Find("Image2text").GetComponent<TextMeshProUGUI>().enabled = true;
-                GameObject.Find("Image2text").GetComponent<TextMeshProUGUI>().SetText(playeritems.Speedpotion.ToString());
+                GameObject.Find("Image2text").GetComponent<TextMeshProUGUI>().SetText(Player.speedpotion.ToString());
             }
-            if (playeritems.Jumppotion > 0)
+            if (Player.jumppotion > 0)
             {
                 Debug.Log("slot on");
                 GameObject.Find("Image3").GetComponent<Image>().enabled = true;
@@ -43,7 +43,7 @@ public class inventory : MonoBehaviour
                 GameObject.Find("InventorySlot3").GetComponent<Image>().enabled = true;
                 GameObject.Find("InventorySlot3").GetComponent<Image>().raycastTarget = true;
                 GameObject.Find("Image3text").GetComponent<TextMeshProUGUI>().enabled = true;
-                GameObject.Find("Image3text").GetComponent<TextMeshProUGUI>().SetText(playeritems.Jumppotion.ToString());
+                GameObject.Find("Image3text").GetComponent<TextMeshProUGUI>().SetText(Player.jumppotion.ToString());
             }
 
 

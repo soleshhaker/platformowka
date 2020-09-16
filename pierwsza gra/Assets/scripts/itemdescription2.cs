@@ -16,7 +16,7 @@ public class itemdescription2 : MonoBehaviour
     AudioSource source;
     void Update()
     {
-        speed = speedpotion.speedvalue;
+       
         
     }
 
@@ -24,8 +24,8 @@ public class itemdescription2 : MonoBehaviour
     {
         ui = GameObject.Find("status");
         int istext = 0;
-        //speed = speedpotion.speedvalue;
-        Debug.Log(speed);
+        speed = speedpotion.speedvalue;
+        // Debug.Log(speed);
     }
 
     void usepotion(float speed)
@@ -55,7 +55,7 @@ public class itemdescription2 : MonoBehaviour
             istext = 1;
 
 
-            Debug.Log(playeritems.Speedpotion);
+           // Debug.Log(Player.speedpotion);
         }
     }
 
@@ -75,12 +75,12 @@ public class itemdescription2 : MonoBehaviour
         objToSpawn.GetComponent<Text>().text = "Potion used!";
         usepotion(speed);
         
-      //  Debug.Log(Player.speed);
+    //  Debug.Log("potion used");
 
         Invoke("endpotion(speed)", 30);
-        playeritems.Speedpotion -= 1;
+        Player.speedpotion -= 1;
         istext = 1;
-        if (playeritems.Speedpotion == 0)
+        if (Player.speedpotion == 0)
         {
 
 

@@ -7,7 +7,7 @@ public class speedpotion : MonoBehaviour
 {
     static public GameObject spdpotion;
     static public GameObject speedpotionslot;
-    static public float speedvalue;
+    static public float speedvalue = 2f;
     AudioSource source;
     void Awake()
     {
@@ -28,7 +28,7 @@ public class speedpotion : MonoBehaviour
         {
             spdpotion.GetComponent<Image>().enabled = true;
             speedpotionslot.GetComponent<Image>().enabled = true;
-            playeritems.Speedpotion += 1;
+            Player.speedpotion += 1;
             source.Play();
 
             Destroy(gameObject, 0.1f);

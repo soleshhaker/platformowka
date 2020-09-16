@@ -29,7 +29,7 @@ public class jumppotion : MonoBehaviour
             
             jmppotion.GetComponent<Image>().enabled = true;
             jumppotionslot.GetComponent<Image>().enabled = true;
-            playeritems.Jumppotion += 1;
+            Player.jumppotion += 1;
             source.Play();
             Destroy(gameObject, 0.1f);
         }

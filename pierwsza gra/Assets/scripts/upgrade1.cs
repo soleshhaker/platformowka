@@ -15,14 +15,14 @@ public class upgrade1 : MonoBehaviour
     {
         obj = GameObject.Find("upgradetext");
 
-        if (col.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.Return) && playeritems.Score >= 300)
+        if (col.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.Return) && Player.score >= 300)
         {
             Debug.Log("skrypt");
-            playeritems.Score -= 300;
+            Player.score -= 300;
             source = GetComponent<AudioSource>();
             source.Play();
             Debug.Log("ulepszono");
-            playeritems.Jump += 2;
+            Player.jump += 2;
             upgraded = true;
             upgradetext.upgradestatus = "Jump upgraded";
 
@@ -30,7 +30,7 @@ public class upgrade1 : MonoBehaviour
             Destroy(gameObject, 0.1f);
 
         }
-        if (col.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.Return) && punkty.scoreValue < 300 && upgraded == false)
+        if (col.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.Return) && Player.score < 300 && upgraded == false)
         {
             upgradetext.upgradestatus = "You need at least 300 points";
             Debug.Log("kolizja");

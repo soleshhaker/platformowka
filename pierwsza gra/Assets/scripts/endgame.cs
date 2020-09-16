@@ -18,7 +18,7 @@ public class endgame : MonoBehaviour
     {
         BoxCollider gatecolider;
 
-        if (col.gameObject.tag == "Player" && playeritems.Score > 100)
+        if (col.gameObject.tag == "Player" && Player.score > 100)
         {
             gate1.gatestatus = "Zebrano ponad 100 punktów";
             Invoke("gaterestart", 3);
@@ -27,7 +27,7 @@ public class endgame : MonoBehaviour
             Application.Quit();
         }
 
-        if (col.gameObject.tag == "Player" && playeritems.Score < 100)
+        if (col.gameObject.tag == "Player" && Player.score < 100)
         {
             gate1.gatestatus = "Nie zebrano 100 punktów";
             Invoke("gaterestart", 3);

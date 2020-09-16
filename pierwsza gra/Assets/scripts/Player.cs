@@ -23,13 +23,15 @@ public class Player : MonoBehaviour
 	float countDown;
 	AudioSource source;
 
+	public static int speedpotion, score, bluedust, jumppotion, jump, key;
+
 	void OnTriggerEnter(Collider col)
 	{
 		source = GameObject.Find("coinsound").GetComponent<AudioSource>();
 		if (col.gameObject.name == "GoldCoin")
 		{
 			Destroy(col.transform.parent.gameObject);
-			playeritems.Score += 20;
+			score += 20;
 			source.Play();
 		}
 	}
@@ -40,11 +42,29 @@ public class Player : MonoBehaviour
 		
 		
 		rigidbody = GetComponent<Rigidbody>();
-	}
 
+		PlayerPrefs.GetInt("speedpotion", speedpotion);
+		PlayerPrefs.GetInt("score", score);
+		PlayerPrefs.GetInt("bluedust", bluedust);
+		PlayerPrefs.GetInt("jumppotion", jumppotion);
+		PlayerPrefs.GetInt("jump", jump);
+		PlayerPrefs.GetInt("key", key);
+		
+
+	}
+	void OnDestroy()
+	{
+		PlayerPrefs.SetInt("speedpotion", speedpotion);
+		PlayerPrefs.SetInt("score", score);
+		PlayerPrefs.SetInt("bluedust", bluedust);
+		PlayerPrefs.SetInt("jumppotion", jumppotion);
+		PlayerPrefs.SetInt("jump", jump);
+		PlayerPrefs.SetInt("key", key);
+		PlayerPrefs.Save();
+	}
 	void Update()
     {
-		
+		//Debug.Log(jump);
 		
 		targetVelocity = new Vector3(vertical, 0, horizontal);
 		targetVelocity = transform.TransformDirection(targetVelocity);
@@ -118,6 +138,9 @@ public class Player : MonoBehaviour
 	{
 		// From the jump height and gravity we deduce the upwards speed 
 		// for the character to reach at the apex.
-		return Mathf.Sqrt(2 * (jumpHeight + playeritems.Jump) * gravity);
+		return Mathf.Sqrt(2 * (jumpHeight + jump) * gravity);
 	}
+
+
+
 }

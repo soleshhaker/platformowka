@@ -26,7 +26,7 @@ public class keypickup : MonoBehaviour
             key.GetComponent<Image>().enabled = true;
             keyslot.GetComponent<Image>().enabled = true;
 
-            playeritems.Key += 1;
+            Player.key += 1;
             gate1.gatestatus = "You picked up a key";
             Invoke("gaterestart", 3);
             source = GetComponent<AudioSource>();
