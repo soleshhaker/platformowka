@@ -12637,6 +12637,16 @@ PrefabInstance:
       propertyPath: vcam4
       value: 
       objectReference: {fileID: 1069972072}
+    - target: {fileID: 8437028015873392977, guid: b79f4ca2251303041878557259a218e4,
+        type: 3}
+      propertyPath: female
+      value: 
+      objectReference: {fileID: 9000000, guid: 3cefbbfe8c81fbb4283daa116169ef21, type: 3}
+    - target: {fileID: 8437028015873392977, guid: b79f4ca2251303041878557259a218e4,
+        type: 3}
+      propertyPath: male
+      value: 
+      objectReference: {fileID: 9000000, guid: eb062aa776e44954d94c4c2f76ebc148, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b79f4ca2251303041878557259a218e4, type: 3}
 --- !u!1001 &101156999901272540

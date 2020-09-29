@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2187848114132662414}
   - component: {fileID: 2187848114132662409}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: trampolina
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9cc18d2d38c0e646ba21f2707b869d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  springForce: 1500
+  springForce: 3000
 --- !u!82 &2187848114132662409
 AudioSource:
   m_ObjectHideFlags: 0

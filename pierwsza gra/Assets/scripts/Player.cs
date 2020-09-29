@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
 {
 
 	public static float speed = 12.0f;
-	private float gravity = 10.0f;
+	private float gravity = 40.0f;
 	private float maxVelocityChange = 10.0f;
 	public bool canJump = true;
 	public Animator animator;

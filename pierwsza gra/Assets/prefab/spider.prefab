@@ -957,8 +957,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.27831778, y: 0.13497663, z: 0.30499145}
-  m_Center: {x: 5.0735672e-17, y: 0.078039244, z: -0.009971589}
+  m_Size: {x: 0.27831778, y: 0.13497663, z: 0.27282745}
+  m_Center: {x: 8.945015e-17, y: 0.078039244, z: -0.01916143}
 --- !u!114 &2303436190469791481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -975,7 +975,6 @@ MonoBehaviour:
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
-  Player: {fileID: 0}
 --- !u!1 &1087688156337115445
 GameObject:
   m_ObjectHideFlags: 0
@@ -1132,8 +1131,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.20118023, y: 0.09324729, z: 0.2192997}
-  m_Center: {x: 0.004587561, y: 0.111657485, z: 0.03373598}
+  m_Size: {x: 0.20118023, y: 0.09324729, z: 0.31703272}
+  m_Center: {x: 0.004587562, y: 0.111657485, z: 0.029711701}
 --- !u!114 &6685976326100639606
 MonoBehaviour:
   m_ObjectHideFlags: 0
