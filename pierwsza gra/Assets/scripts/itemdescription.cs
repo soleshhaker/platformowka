@@ -9,13 +9,13 @@ public class itemdescription : MonoBehaviour
 {
     GameObject objToSpawn;
     GameObject ui;
-    int istext;
+    int istext = 0;
     public TextAlignmentOptions alignment { get; set; }
 
     void Awake()
     {
         ui = GameObject.Find("status");
-        int istext = 0;
+        
     }
 
     void Update()

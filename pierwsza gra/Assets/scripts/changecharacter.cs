@@ -15,7 +15,7 @@ public class changecharacter : MonoBehaviour
 
     void Awake()
     {
-        
+        player = GameObject.FindWithTag("Player");
        
         ischaracterchanged = false;
     }

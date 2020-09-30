@@ -10,7 +10,7 @@ public class itemdescription2 : MonoBehaviour
 {
     GameObject objToSpawn;
     GameObject ui;
-    int istext;
+    int istext = 0;
     float speed;
     public TextAlignmentOptions alignment { get; set; }
     AudioSource source;
@@ -23,7 +23,7 @@ public class itemdescription2 : MonoBehaviour
     void Awake()
     {
         ui = GameObject.Find("status");
-        int istext = 0;
+        
         speed = speedpotion.speedvalue;
         // Debug.Log(speed);
     }

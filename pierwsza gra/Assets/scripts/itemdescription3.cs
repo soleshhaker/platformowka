@@ -10,14 +10,14 @@ public class itemdescription3 : MonoBehaviour
 {
     GameObject objToSpawn;
     GameObject ui;
-    int istext;
+    int istext = 0;
     int jump;
     public TextAlignmentOptions alignment { get; set; }
     AudioSource source;
     void Awake()
     {
         ui = GameObject.Find("status");
-        int istext = 0;
+       
       
         
     }

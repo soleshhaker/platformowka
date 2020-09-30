@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
 	private float horizontal;
 	private float vertical;
 	Vector3 targetVelocity;
-	private Rigidbody rigidbody;
+	private Rigidbody body;
 	int i;
 	float countDown;
 	AudioSource source;
@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
 		GetComponent<Rigidbody>().useGravity = false;
 		
 		
-		rigidbody = GetComponent<Rigidbody>();
+		body = GetComponent<Rigidbody>();
 
 		PlayerPrefs.GetInt("speedpotion", speedpotion);
 		PlayerPrefs.GetInt("score", score);
@@ -101,22 +101,22 @@ public class Player : MonoBehaviour
 
 
 		// Apply a force that attempts to reach our target velocity
-		Vector3 velocity = rigidbody.velocity;
+		Vector3 velocity = body.velocity;
 			Vector3 velocityChange = (targetVelocity - velocity);
 			velocityChange.x = Mathf.Clamp(velocityChange.x, -maxVelocityChange, maxVelocityChange);
 			velocityChange.z = Mathf.Clamp(velocityChange.z, -maxVelocityChange, maxVelocityChange);
 			velocityChange.y = 0;
-			rigidbody.AddForce(velocityChange, ForceMode.VelocityChange);
+			body.AddForce(velocityChange, ForceMode.VelocityChange);
 		//Debug.Log(targetVelocity);
 		// Jump
 		if (canJump && grounded && Input.GetButton("Jump"))
 			{
-				rigidbody.velocity = new Vector3(velocity.x, CalculateJumpVerticalSpeed(), velocity.z);
+				body.velocity = new Vector3(velocity.x, CalculateJumpVerticalSpeed(), velocity.z);
 			}
 		
 
 		// We apply gravity manually for more tuning control
-		rigidbody.AddForce(new Vector3(0, -gravity * GetComponent<Rigidbody>().mass, 0));
+		body.AddForce(new Vector3(0, -gravity * GetComponent<Rigidbody>().mass, 0));
 
 		grounded = false;
 	}
