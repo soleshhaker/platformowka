@@ -71,33 +71,25 @@ public class Player : MonoBehaviour
 		targetVelocity *= speed;
 		if (Input.GetKeyDown(KeyCode.RightArrow))
 		{
-			transform.rotation = Quaternion.Euler(0, 90, 0);
+			transform.GetChild(0).rotation = Quaternion.Euler(0, 90, 0);
+			if(changecharacter.ischaracterchanged == true)
+            {
+				transform.GetChild(1).rotation = Quaternion.Euler(0, 90, 0);
+			}
+			
 		}
 		if (Input.GetKey(KeyCode.LeftArrow))
 		{
-			transform.rotation = Quaternion.Euler(0, -90, 0);
-			targetVelocity[0] = targetVelocity[0] * -1;
-		}
-		if (Input.GetKeyUp(KeyCode.LeftArrow))
-		{
-
-			StartCoroutine(StartCounter());
-		}
-
-	}
-	private IEnumerator StartCounter()
-	{
-		countDown = 0.15f;
-		for (int i = 0; i < 10000; i++)
-		{
-			while (countDown >= 0)
+			transform.GetChild(0).rotation = Quaternion.Euler(0, -90, 0);
+			if (changecharacter.ischaracterchanged == true)
 			{
-				targetVelocity[0] = targetVelocity[0] * -1;
-				countDown -= Time.smoothDeltaTime;
-				yield return null;
+				transform.GetChild(1).rotation = Quaternion.Euler(0, -90, 0);
 			}
+
 		}
+
 	}
+
 		void FixedUpdate()
 	{
 		horizontal = Input.GetAxis("Horizontal");
