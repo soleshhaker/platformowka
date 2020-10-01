@@ -3449,6 +3449,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1932374512}
     m_Modifications:
+    - target: {fileID: 2187848114132662413, guid: 954e425e2191f6f44a402434919a4f3b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0e1b8260fe02dd047b3ec13f6e22a934, type: 2}
     - target: {fileID: 2187848114132662414, guid: 954e425e2191f6f44a402434919a4f3b,
         type: 3}
       propertyPath: springForce
