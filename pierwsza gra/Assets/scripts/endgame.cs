@@ -24,7 +24,7 @@ public class endgame : MonoBehaviour
             Invoke("gaterestart", 3);
             gatecolider = GameObject.Find("gatecolider").GetComponent<BoxCollider>();
             gatecolider.enabled = false ;
-            Application.Quit();
+            
         }
 
         if (col.gameObject.tag == "Player" && Player.score < 100)
