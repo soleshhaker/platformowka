@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class Pajak : MonoBehaviour
 {
@@ -9,10 +10,10 @@ public class Pajak : MonoBehaviour
     public Transform[] waypoints;
     int m_CurrentWaypointIndex;
     AudioSource source;
-
     void Start()
     {
         navMeshAgent.SetDestination(waypoints[0].position);
+        
     }
 
     // Update is called once per frame
@@ -31,12 +32,13 @@ public class Pajak : MonoBehaviour
     void OnCollisionEnter(Collision col)
     {
        
-        source = GameObject.Find("deathsound").GetComponent<AudioSource>();
+        //source = GameObject.Find("deathsound").GetComponent<AudioSource>();
         if (col.gameObject.tag == "Player")
         {
 
-            Destroy(col.gameObject);
-            source.Play();
+           col.gameObject.GetComponent<Player>().TakeDamage();
+            
+          //  source.Play();
             Player.score--;
         }
     }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6707106749720164448}
   - component: {fileID: 6707106749720164381}
   - component: {fileID: 6707106749720164382}
-  - component: {fileID: 6707106749720164383}
+  - component: {fileID: 3013638175020166370}
   m_Layer: 5
   m_Name: punkty
   m_TagString: Untagged
@@ -79,7 +79,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: New Text
---- !u!114 &6707106749720164383
+--- !u!114 &3013638175020166370
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

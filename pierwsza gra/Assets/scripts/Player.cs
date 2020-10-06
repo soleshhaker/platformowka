@@ -20,10 +20,33 @@ public class Player : MonoBehaviour
 	Vector3 targetVelocity;
 	private Rigidbody body;
 	int i;
+	public static int hp = 3;
 	float countDown;
 	AudioSource source;
 
+	public event System.Action OnPlayerDeath;
+
+
+
 	public static int speedpotion, score, bluedust, jumppotion, jump, key;
+
+	public void TakeDamage()
+    {
+		hp -= 1;
+		if(hp <= 0)
+        {
+			Die();
+        }
+    }
+
+	private void Die()
+    {
+		if (OnPlayerDeath != null)
+		{
+			OnPlayerDeath();
+		}
+		Destroy(gameObject);
+    }
 
 	void OnTriggerEnter(Collider col)
 	{
@@ -64,7 +87,7 @@ public class Player : MonoBehaviour
 	}
 	void Update()
     {
-		//Debug.Log(jump);
+		Debug.Log(hp);
 		
 		targetVelocity = new Vector3(vertical, 0, horizontal);
 		targetVelocity = transform.TransformDirection(targetVelocity);
