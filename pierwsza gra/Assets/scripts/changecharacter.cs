@@ -19,14 +19,27 @@ public class changecharacter : MonoBehaviour
        
         ischaracterchanged = false;
     }
-
+    void ChangeStatus()
+    {
+        ischaracterchanged = true;
+    }
     public void OnPointerClick(PointerEventData eventData)
     {
- 
+        if (ischaracterchanged == false)
+        {
             player.transform.GetChild(0).gameObject.SetActive(false);
             player.transform.GetChild(1).gameObject.SetActive(true);
             player.GetComponent<Animator>().avatar = female;
-            ischaracterchanged = true;
+            Invoke("ChangeStatus", 2);
+        }
+
+        if (ischaracterchanged == true)
+        {
+            player.transform.GetChild(0).gameObject.SetActive(true);
+            player.transform.GetChild(1).gameObject.SetActive(false);
+            player.GetComponent<Animator>().avatar = male;
+            ischaracterchanged = false;
+        }
 
 
     }

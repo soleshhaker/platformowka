@@ -45,6 +45,7 @@ public class Player : MonoBehaviour
 		{
 			OnPlayerDeath();
 		}
+		score = 1;
 		Destroy(gameObject);
     }
 
@@ -87,7 +88,7 @@ public class Player : MonoBehaviour
 	}
 	void Update()
     {
-		Debug.Log(hp);
+		//Debug.Log(hp);
 		
 		targetVelocity = new Vector3(vertical, 0, horizontal);
 		targetVelocity = transform.TransformDirection(targetVelocity);
